@@ -1,3 +1,4 @@
+import 'package:app_bar_with_search_switch/app_bar_with_search_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,31 @@ class _PrincipalPageState extends State<PrincipalPage> {
       ],
     );
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBarWithSearchSwitch(
+        onChanged: (text) {
+          setState(() {
+            _searchController.text = text;
+          });
+        },
+        // onSubmitted: (text) {
+        //   searchText.value = text;
+        // },
+        animation: AppBarAnimationSlideLeft.call,
+        // animation: (child) => AppBarAnimationSlideLeft(
+        //     milliseconds: 400, withFade: false, percents: 0.25, child: child),
+        appBarBuilder: (context) {
+          return AppBar(
+            title: const Text("Todo sobre series"),
+            actions: const [
+              // AppBarSpeechButton(),  // in version 2.0+
+              AppBarSearchButton(),
+              // or
+              // IconButton(onPressed: AppBarWithSearchSwitch.of(context)?startSearch, icon: Icon(Icons.search)),
+            ],
+          );
+        },
+      ),
+/*      AppBar(
         title: const Text('Mi aplicación'),
         actions: [
           IconButton(
@@ -40,13 +65,13 @@ class _PrincipalPageState extends State<PrincipalPage> {
             icon: const Icon(Icons.search),
           ),
         ],
-      ),
+      ),*/
       body: Stack(children: [
         Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Contenido de la aplicación'),
+              Text('Contenido de la aplicación: ${_searchController.text}'),
               ElevatedButton(
                 onPressed: () {
                   setState(() {

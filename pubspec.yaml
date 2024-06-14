@@ -34,6 +34,8 @@ dependencies:
   dio: ^5.3.3
   dio_cache_interceptor: ^3.2.7
   pretty_dio_logger: ^1.2.0-beta-1
+  #logger
+  logger: ^2.0.2+1
 
   flutter_riverpod: ^2.5.1
 
