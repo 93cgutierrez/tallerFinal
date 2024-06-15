@@ -2,6 +2,7 @@
 
 class ParametersApiUtil {
   static String baseUrl = 'https://api.themoviedb.org';
+  static String baseUrlImage = 'https://image.tmdb.org/t/p/w500/';
 
   static int ok = 200;
 

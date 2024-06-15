@@ -42,14 +42,14 @@ class ApiEndpoint {
     String version = versionApi.value;
     switch (endpoint) {
       case TvEndpoint.search:
-        return '$version/search/$path';
+        return '/$version/search/$path';
       case TvEndpoint.topRated:
-        return '$version/$path/top_rated';
+        return '/$version/$path/top_rated';
       case TvEndpoint.details:
         {
           assert(
               seriesId != null, 'seriesId is required for details for series');
-          return '$version/$path/$seriesId';
+          return '/$version/$path/$seriesId';
         }
 
       case TvEndpoint.detailsTvSeason:
@@ -58,7 +58,7 @@ class ApiEndpoint {
               seriesId != null, 'seriesId is required for details for season');
           assert(seasonNumber != null,
               'seasonNumber is required for details for season');
-          return '$version/$path/$seriesId/season/$seasonNumber';
+          return '/$version/$path/$seriesId/season/$seasonNumber';
         }
     }
   }

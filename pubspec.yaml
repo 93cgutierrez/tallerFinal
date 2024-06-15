@@ -43,6 +43,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   app_bar_with_search_switch: ^1.8.5
+  swipe_refresh: ^1.1.2
+  http: ^1.2.1
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
